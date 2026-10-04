@@ -2,13 +2,6 @@
 
 public class Exercises
 {
-    public static void Main(string[] args)
-    {
-        PositiveSquare();
-        DoubleOrTriple();
-        RootOrSquare();
-    }
-
     // 1. Positive Power
     public static void PositiveSquare()
     {
@@ -70,6 +63,17 @@ public class Exercises
             {
                 Console.WriteLine("Resultado: 0");
             }
+        }
+    }
+
+    // 4. Circle Perimeter
+    public static void CirclePerimeter()
+    {
+        Console.Write("Ingresa el radio del círculo: ");
+        if (double.TryParse(Console.ReadLine(), out double radio))
+        {
+            double perimeter = 2 * Math.PI * radio;
+            Console.WriteLine($"Resultado: {perimeter:F2}");
         }
     }
 }
