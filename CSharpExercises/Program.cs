@@ -18,14 +18,17 @@ public class Program
             Console.WriteLine("7. Remainder Finder");
             Console.WriteLine("8. Sum of Evens");
             Console.WriteLine("9. Fraction Difference");
+            Console.WriteLine("10. String Length");
+            Console.WriteLine("11. Average of Four");
+            Console.WriteLine("12. Smallest of Five");
             Console.WriteLine("0. Exit");
-            Console.Write("\nChoice an option (1-9): ");
+            Console.Write("\nChoice an option (1-12): ");
 
             if (int.TryParse(Console.ReadLine(), out option))
             {
-                if (option < 0 || option > 9)
+                if (option < 0 || option > 12)
                 {
-                    Console.WriteLine("Invalid option. Please select a number between 0 and 9.");
+                    Console.WriteLine("Invalid option. Please select a number between 0 and 12.");
                     Console.WriteLine("\nPress any key to continue...");
                     Console.ReadKey();
                     continue;
@@ -42,6 +45,9 @@ public class Program
                     case 7: Exercises.RemainderFinder(); break;
                     case 8: Exercises.SumOfEvens(); break;
                     case 9: Exercises.FractionDifference(); break;
+                    case 10: Exercises.StringLength(); break;
+                    case 11: Exercises.AverageOfFour(); break;
+                    case 12: Exercises.SmallestOfFive(); break;
                     case 0: Console.WriteLine("Exiting the program..."); break;
                     default: Console.WriteLine("Invalid option."); break;
                 }

@@ -171,4 +171,43 @@ public class Exercises
             Console.WriteLine($"Resultado {diff:F4}");
         }
     }
+
+    // 10. String Length
+    public static void StringLength()
+    {
+        Console.Write("Pide una palabra al usuario: ");
+        string word = Console.ReadLine() ?? "";
+        Console.WriteLine($"Resultado: {word.Length}");
+    }
+
+    // 11. Average of Four
+    public static void AverageOfFour()
+    {
+        Console.WriteLine("Ingrese cuatro números:");
+        double sum = 0;
+        for (int i = 1; i <= 4; i++)
+        {
+            Console.Write($"Número {i}: ");
+            double.TryParse(Console.ReadLine(), out double val);
+            sum += val;
+        }
+        Console.WriteLine($"Resultado: {sum / 4.0}");
+    }
+
+    // 12. Smallest of Five
+    public static void SmallestOfFive()
+    {
+        Console.WriteLine("Ingrese cinco números:");
+        double smallest = double.MaxValue;
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.Write($"Número {i}: ");
+            double.TryParse(Console.ReadLine(), out double val);
+            if (val < smallest)
+            {
+                smallest = val;
+            }
+        }
+        Console.WriteLine($"Resultado: {smallest}");
+    }
 }
