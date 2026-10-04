@@ -210,4 +210,58 @@ public class Exercises
         }
         Console.WriteLine($"Resultado: {smallest}");
     }
+
+    // 13. Vowel Counter
+    public static void VowelCounter()
+    {
+        Console.Write("Pide una palabra al usuario: ");
+        string word = (Console.ReadLine() ?? "").ToLower();
+        int count = 0;
+        char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+        foreach (char c in word)
+        {
+            if (Array.Exists(vowels, v => v == c))
+            {
+                count++;
+            }
+        }
+        Console.WriteLine($"Resultado: {count}");
+    }
+
+    // 14. Factorial Finder
+    public static void FactorialFinder()
+    {
+        Console.Write("Pide un número al usuario: ");
+        if (int.TryParse(Console.ReadLine(), out int n) && n >= 0)
+        {
+            long factorial = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                factorial *= i;
+            }
+            Console.WriteLine($"Resultado: {factorial}");
+        }
+        else
+        {
+            Console.WriteLine("Por favor ingrese un entero no negativo.");
+        }
+    }
+
+    // 15. InRange Validator
+    public static void InRangeValidator()
+    {
+        Console.Write("Pide un número al usuario: ");
+        if (int.TryParse(Console.ReadLine(), out int num))
+        {
+            if (num >= 10 && num <= 20)
+            {
+                Console.WriteLine("Resultado: Está en el rango.");
+            }
+            else
+            {
+                Console.WriteLine("Resultado: Fuera del rango.");
+            }
+        }
+    }
 }
