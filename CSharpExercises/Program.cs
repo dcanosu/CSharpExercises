@@ -14,12 +14,13 @@ public class Program
             Console.WriteLine("3. Root or Square");
             Console.WriteLine("4. Circle Perimeter");
             Console.WriteLine("5. Midweek Day");
+            Console.WriteLine("6. Tax Calculator");
             Console.WriteLine("0. Exit");
-            Console.Write("\nChoice an option (1-5): ");
+            Console.Write("\nChoice an option (1-6): ");
 
             if (int.TryParse(Console.ReadLine(), out option))
             {
-                if (option < 0 || option > 5)
+                if (option < 0 || option > 6)
                 {
                     Console.WriteLine("Invalid option. Please select a number between 0 and 4.");
                     Console.WriteLine("\nPress any key to continue...");
@@ -34,6 +35,7 @@ public class Program
                     case 3: Exercises.RootOrSquare(); break;
                     case 4: Exercises.CirclePerimeter(); break;
                     case 5: Exercises.MidweekDay(); break;
+                    case 6: Exercises.TaxCalculator(); break;
                     case 0: Console.WriteLine("Exiting the program..."); break;
                     default: Console.WriteLine("Invalid option."); break;
                 }

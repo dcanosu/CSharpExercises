@@ -96,4 +96,21 @@ public class Exercises
         }
     }
 
+    // 6. Tax Calculator
+    public static void TaxCalculator()
+    {
+        Console.Write("Ingrese su salario anual: ");
+        if (double.TryParse(Console.ReadLine(), out double salary))
+        {
+            if (salary > 12000)
+            {
+                double tax = (salary - 12000) * 0.15;
+                Console.WriteLine($"Resultado: {tax}");
+            }
+            else
+            {
+                Console.WriteLine("Resultado: No debe impuestos.");
+            }
+        }
+    }
 }
