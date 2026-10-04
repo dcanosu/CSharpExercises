@@ -1,0 +1,11 @@
+{
+  "name": "CSharp Exercises",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "excercises",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-dotnettools.csdevkit"]
+    }
+  }
+}
