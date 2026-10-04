@@ -8,58 +8,31 @@ public class Program
         do
         {
             Console.Clear();
-            Console.WriteLine("=== MAIN MENU ===");
+            Console.WriteLine("=== MAIN MENU ===\n");
             Console.WriteLine("1. Positive Power");
-            Console.WriteLine("2. Double or Triple");
-            Console.WriteLine("3. Root or Square");
-            Console.WriteLine("4. Circle Perimeter");
-            Console.WriteLine("5. Midweek Day");
-            Console.WriteLine("6. Tax Calculator");
-            Console.WriteLine("7. Remainder Finder");
-            Console.WriteLine("8. Sum of Evens");
-            Console.WriteLine("9. Fraction Difference");
-            Console.WriteLine("10. String Length");
-            Console.WriteLine("11. Average of Four");
-            Console.WriteLine("12. Smallest of Five");
-            Console.WriteLine("13. Vowel Counter");
-            Console.WriteLine("14. Factorial Finder");
-            Console.WriteLine("15. InRange Validator");
             Console.WriteLine("0. Exit");
             Console.Write("\nChoice an option (1-15): ");
 
             if (int.TryParse(Console.ReadLine(), out option))
             {
-                if (option < 0 || option > 15)
-                {
-                    Console.WriteLine("Invalid option. Please select a number between 0 and 15.");
-                    Console.WriteLine("\nPress any key to continue...");
-                    Console.ReadKey();
-                    continue;
-                }
                 Console.WriteLine("\n--- RUNNING EXERCISE {0} ---", option);
-                switch (option)
-                {
-                    case 1: Exercises.PositiveSquare(); break;
-                    case 2: Exercises.DoubleOrTriple(); break;
-                    case 3: Exercises.RootOrSquare(); break;
-                    case 4: Exercises.CirclePerimeter(); break;
-                    case 5: Exercises.MidweekDay(); break;
-                    case 6: Exercises.TaxCalculator(); break;
-                    case 7: Exercises.RemainderFinder(); break;
-                    case 8: Exercises.SumOfEvens(); break;
-                    case 9: Exercises.FractionDifference(); break;
-                    case 10: Exercises.StringLength(); break;
-                    case 11: Exercises.AverageOfFour(); break;
-                    case 12: Exercises.SmallestOfFive(); break;
-                    case 13: Exercises.VowelCounter(); break;
-                    case 14: Exercises.FactorialFinder(); break;
-                    case 15: Exercises.InRangeValidator(); break;
-                    case 0: Console.WriteLine("Exiting the program..."); break;
-                    default: Console.WriteLine("Invalid option."); break;
-                }
 
+                IExcersice? exercise = option switch
+                {
+                    1 => new PositivePower(),
+                    _ => null
+                };
+
+                if (exercise != null)
+                {
+                    exercise.Excecute();
+                }
+                else if (option != 0)
+                {
+                    Console.WriteLine("Invalid option.");
+                }
                 if (option != 0)
-                {   
+                {
                     Console.WriteLine("\nPress any key to continue...");
                     Console.ReadKey();
                 }
