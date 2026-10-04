@@ -113,4 +113,62 @@ public class Exercises
             }
         }
     }
+
+    // 7. Remainder Finder
+    public static void RemainderFinder()
+    {
+        Console.Write("Ingrese el primer número: ");
+        int.TryParse(Console.ReadLine(), out int n1);
+        Console.Write("Ingrese el segundo número: ");
+        int.TryParse(Console.ReadLine(), out int n2);
+
+        if (n2 != 0)
+        {
+            int remainder = n1 % n2;
+            Console.WriteLine($"Resultado: {remainder}");
+        }
+        else
+        {
+            Console.WriteLine("No se puede dividir entre cero.");
+        }
+    }
+
+    // 8. Sum of Evens
+    public static void SumOfEvens()
+    {
+        int sum = 0;
+        for (int i = 1; i <= 50; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sum += i;
+            }
+        }
+        Console.WriteLine($"Resultado: {sum}");
+    }
+
+    // 9. Fraction Difference
+    public static void FractionDifference()
+    {
+        Console.WriteLine("Fracción 1:");
+        Console.Write("Numerador: ");
+        int.TryParse(Console.ReadLine(), out int num1);
+        Console.Write("Denominador: ");
+        int.TryParse(Console.ReadLine(), out int den1);
+
+        Console.WriteLine("Fracción 2:");
+        Console.Write("Numerador: ");
+        int.TryParse(Console.ReadLine(), out int num2);
+        Console.Write("Denominador: ");
+        int.TryParse(Console.ReadLine(), out int den2);
+
+        if (den1 != 0 && den2 != 0)
+        {
+            double f1 = (double)num1 / den1;
+            double f2 = (double)num2 / den2;
+            double diff = Math.Abs(f1 - f2);
+
+            Console.WriteLine($"Resultado {diff:F4}");
+        }
+    }
 }
