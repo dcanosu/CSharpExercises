@@ -30,6 +30,7 @@ public class Program
 
             if (int.TryParse(Console.ReadLine(), out option))
             {
+                Console.WriteLine("\n--- RUNNING EXERCISE {0} ---", option);
                 IExercise? exercise = null;
 
                 switch (option)
@@ -149,7 +150,6 @@ public class Program
 
                 if (exercise != null)
                 {
-                    Console.WriteLine("\n--- RUNNING EXERCISE {0} ---", option);
                     exercise.Execute();
                 }
                 else if (option != 0)
