@@ -1,8 +1,8 @@
 ﻿namespace CSharpExercises;
 
-public class SumOfEvens : IExcersice
+public class SumOfEvens : IExercise
 {
-    public void Excecute()
+    public void Execute()
     {
         int sum = 0;
         for (int i = 1; i <= 50; i++)
@@ -12,6 +12,6 @@ public class SumOfEvens : IExcersice
                 sum += i;
             }
         }
-        Console.WriteLine($"Resultado: {sum}");
+        Console.WriteLine($"Result: {sum}");
     }
 }

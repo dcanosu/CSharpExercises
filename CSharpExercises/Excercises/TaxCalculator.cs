@@ -1,21 +1,24 @@
 ﻿namespace CSharpExercises;
 
-public class TaxCalculator : IExcersice
+public class TaxCalculator : IExercise
 {
-    public void Excecute()
+    private readonly double _salary;
+
+    public TaxCalculator(double salary)
     {
-        Console.Write("Ingrese su salario anual: ");
-        if (double.TryParse(Console.ReadLine(), out double salary))
+        _salary = salary;
+    }
+    public void Execute()
+    {
+        if (_salary > 12000)
         {
-            if (salary > 12000)
-            {
-                double tax = (salary - 12000) * 0.15;
-                Console.WriteLine($"Resultado: {tax}");
-            }
-            else
-            {
-                Console.WriteLine("Resultado: No debe impuestos.");
-            }
+            double tax = (_salary - 12000) * 0.15;
+            Console.WriteLine($"Result: {tax}");
+        }
+        else
+        {
+            Console.WriteLine("Result: No tax to pay.");
         }
     }
 }
+

@@ -1,14 +1,19 @@
 ﻿namespace CSharpExercises;
 
-public class CirclePerimeter : IExcersice
+public class CirclePerimeter : IExercise
 {
-    public void Excecute()
+    private readonly double _radius;
+
+    public CirclePerimeter(double radius)
     {
-        Console.Write("Ingresa el radio del círculo: ");
-        if (double.TryParse(Console.ReadLine(), out double radio))
+        _radius = radius;
+    }
+    public void Execute()
+    {
+        if (_radius > 0)
         {
-            double perimeter = 2 * Math.PI * radio;
-            Console.WriteLine($"Resultado: {perimeter:F2}");
+            double perimeter = 2 * Math.PI * _radius;
+            Console.WriteLine($"Result: {perimeter:F2}");
         }
     }
 }

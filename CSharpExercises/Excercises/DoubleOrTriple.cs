@@ -1,21 +1,24 @@
 ﻿namespace CSharpExercises;
 
-public class DoubleOrTriple : IExcersice
+public class DoubleOrTriple : IExercise
 {
-    public void Excecute()
-    {
-        Console.Write("Ingrese el primer número: ");
-        double.TryParse(Console.ReadLine(), out double num1);
-        Console.Write("Ingrese el segundo número: ");
-        double.TryParse(Console.ReadLine(), out double num2);
+    private readonly double _num1;
+    private readonly double _num2;
 
-        if (num1 >= num2)
+    public DoubleOrTriple(double num1, double num2)
+    {
+        _num1 = num1;
+        _num2 = num2;
+    }
+    public void Execute()
+    {
+        if (_num1 >= _num2)
         {
-            Console.WriteLine($"Resultado: {num1 * 2}");
+            Console.WriteLine($"Result: {_num1 * 2}");
         }
         else
         {
-            Console.WriteLine($"Resultado: {num2 * 3}");
+            Console.WriteLine($"Result: {_num2 * 3}");
         }
     }
 }

@@ -1,24 +1,26 @@
 ﻿namespace CSharpExercises;
 
-public class RootOrSquare : IExcersice
+public class RootOrSquare : IExercise
 {
-    public void Excecute()
+    private readonly double _number;
+
+    public RootOrSquare(double number)
     {
-        Console.Write("Ingrese un número: ");
-        if (double.TryParse(Console.ReadLine(), out double num))
+        _number = number;
+    }
+    public void Execute()
+    {
+        if (_number > 0)
         {
-            if (num > 0)
-            {
-                Console.WriteLine($"Resultado: {Math.Sqrt(num)}");
-            }
-            else if (num < 0)
-            {
-                Console.WriteLine($"Resultado: {num * num}");
-            }
-            else
-            {
-                Console.WriteLine("Resultado: 0");
-            }
+            Console.WriteLine($"Result: {Math.Sqrt(_number)}");
+        }
+        else if (_number < 0)
+        {
+            Console.WriteLine($"Result: {_number * _number}");
+        }
+        else
+        {
+            Console.WriteLine("Result: 0");
         }
     }
 }

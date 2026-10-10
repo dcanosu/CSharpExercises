@@ -1,20 +1,24 @@
 ﻿namespace CSharpExercises;
 
-public class SmallestOfFive : IExcersice
+public class SmallestOfFive : IExercise
 {
-    public void Excecute()
+    private readonly int[] _numbers;
+
+    public SmallestOfFive(int[] numbers)
     {
-        Console.WriteLine("Ingrese cinco números:");
-        double smallest = double.MaxValue;
-        for (int i = 1; i <= 5; i++)
+        _numbers = numbers;
+    }
+    public void Execute()
+    {
+        int smallest = int.MaxValue;
+        
+        foreach (int number in _numbers)
         {
-            Console.Write($"Número {i}: ");
-            double.TryParse(Console.ReadLine(), out double val);
-            if (val < smallest)
+            if (number < smallest)
             {
-                smallest = val;
+                smallest = number;
             }
         }
-        Console.WriteLine($"Resultado: {smallest}");
+        Console.WriteLine($"Result: {smallest}");
     }
 }

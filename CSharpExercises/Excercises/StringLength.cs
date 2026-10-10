@@ -1,11 +1,15 @@
 ﻿namespace CSharpExercises;
 
-public class StringLength : IExcersice
+public class StringLength : IExercise
 {
-    public void Excecute()
+    private readonly string _word;
+
+    public StringLength(string word)
     {
-        Console.Write("Pide una palabra al usuario: ");
-        string word = Console.ReadLine() ?? "";
-        Console.WriteLine($"Resultado: {word.Length}");
+        _word = word;
+    }
+    public void Execute()
+    {
+        Console.WriteLine($"Result: {_word.Length}");
     }
 }

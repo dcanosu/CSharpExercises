@@ -1,24 +1,26 @@
 ﻿namespace CSharpExercises;
 
-public class PositivePower : IExcersice
+public class PositivePower : IExercise
 {
-    public void Excecute()
+    private readonly double _number;
+
+    public PositivePower(double number)
     {
-        Console.Write("Ingrese un número positivo: ");
-        if (double.TryParse(Console.ReadLine(), out double num))
+        _number = number;
+    }
+    public void Execute()
+    {
+        if (_number > 0)
         {
-            if (num > 0)
-            {
-                Console.WriteLine($"Resultado: {num * num}");
-            }
-            else if (num < 0)
-            {
-                Console.WriteLine("Resultado: Número negativo.");
-            }
-            else
-            {
-                Console.WriteLine("Resultado: 0");
-            }
+            Console.WriteLine($"Result: {_number * _number}");
+        }
+        else if (_number < 0)
+        {
+            Console.WriteLine("Result: Negative number.");
+        }
+        else
+        {
+            Console.WriteLine("Result: 0");
         }
     }
 }

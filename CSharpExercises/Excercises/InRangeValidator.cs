@@ -1,20 +1,22 @@
 ﻿namespace CSharpExercises;
 
-public class InRangeValidator : IExcersice
+public class InRangeValidator : IExercise
 {
-    public void Excecute()
+    private readonly int _number;
+
+    public InRangeValidator(int number)
     {
-        Console.Write("Pide un número al usuario: ");
-        if (int.TryParse(Console.ReadLine(), out int num))
+        _number = number;
+    }
+    public void Execute()
+    {
+        if (_number >= 10 && _number <= 20)
         {
-            if (num >= 10 && num <= 20)
-            {
-                Console.WriteLine("Resultado: Está en el rango.");
-            }
-            else
-            {
-                Console.WriteLine("Resultado: Fuera del rango.");
-            }
+            Console.WriteLine("Result: In the range.");
+        }
+        else
+        {
+            Console.WriteLine("Result: Out of the range.");
         }
     }
 }

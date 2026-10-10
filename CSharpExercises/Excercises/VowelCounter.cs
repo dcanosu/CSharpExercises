@@ -1,11 +1,16 @@
 ﻿namespace CSharpExercises;
 
-public class VowelCounter : IExcersice
+public class VowelCounter : IExercise
 {
-    public void Excecute()
+    private readonly string _word;
+
+    public VowelCounter(string word)
     {
-        Console.Write("Pide una palabra al usuario: ");
-        string word = (Console.ReadLine() ?? "").ToLower();
+        _word = word;
+    }
+    public void Execute()
+    {
+        string word = _word;
         int count = 0;
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
@@ -16,6 +21,6 @@ public class VowelCounter : IExcersice
                 count++;
             }
         }
-        Console.WriteLine($"Resultado: {count}");
+        Console.WriteLine($"Result: {count}");
     }
 }

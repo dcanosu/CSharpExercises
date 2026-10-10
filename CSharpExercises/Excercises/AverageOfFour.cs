@@ -1,17 +1,27 @@
 ﻿namespace CSharpExercises;
 
-public class AverageOfFour : IExcersice
+public class AverageOfFour : IExercise
 {
-    public void Excecute()
+    private readonly double _num1;
+    private readonly double _num2;
+    private readonly double _num3;
+    private readonly double _num4;
+
+    public AverageOfFour(double num1, double num2, double num3, double num4)
     {
-        Console.WriteLine("Ingrese cuatro números:");
+        _num1 = num1;
+        _num2 = num2;
+        _num3 = num3;
+        _num4 = num4;
+    }
+
+    public void Execute()
+    {
         double sum = 0;
-        for (int i = 1; i <= 4; i++)
-        {
-            Console.Write($"Número {i}: ");
-            double.TryParse(Console.ReadLine(), out double val);
-            sum += val;
-        }
-        Console.WriteLine($"Resultado: {sum / 4.0}");
+        sum += _num1;
+        sum += _num2;
+        sum += _num3;
+        sum += _num4;
+        Console.WriteLine($"Result: {sum / 4.0}");
     }
 }

@@ -1,22 +1,25 @@
 ﻿namespace CSharpExercises;
 
-public class RemainderFinder : IExcersice
+public class RemainderFinder : IExercise
 {
-    public void Excecute()
-    {
-        Console.Write("Ingrese el primer número: ");
-        int.TryParse(Console.ReadLine(), out int n1);
-        Console.Write("Ingrese el segundo número: ");
-        int.TryParse(Console.ReadLine(), out int n2);
+    private readonly int _num1;
+    private readonly int _num2;
 
-        if (n2 != 0)
+    public RemainderFinder(int num1, int num2)
+    {
+        _num1 = num1;
+        _num2 = num2;
+    }
+    public void Execute()
+    {
+        if (_num2 != 0)
         {
-            int remainder = n1 % n2;
-            Console.WriteLine($"Resultado: {remainder}");
+            int remainder = _num1 % _num2;
+            Console.WriteLine($"Result: {remainder}");
         }
         else
         {
-            Console.WriteLine("No se puede dividir entre cero.");
+            Console.WriteLine("Result: Division by zero is not allowed.");
         }
     }
 }

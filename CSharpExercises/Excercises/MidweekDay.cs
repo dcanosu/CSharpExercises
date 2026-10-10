@@ -1,22 +1,31 @@
 ﻿namespace CSharpExercises;
 
-public class MidweekDay : IExcersice
+public class MidweekDay : IExercise
 {
-    public void Excecute()
+    private readonly int _day;
+
+    public MidweekDay(int day)
     {
-        Console.Write("Ingrese un número entre 1 y 7: ");
-        if (int.TryParse(Console.ReadLine(), out int day))
+        _day = day;
+    }
+    public void Execute()
+    {
+        if (_day >= 1 && _day <= 5)
         {
-            string result = day switch
+            string result = _day switch
             {
-                1 => "Lunes",
-                2 => "Martes",
-                3 => "Miércoles",
-                4 => "Jueves",
-                5 => "Viernes",
-                _ => "Número fuera del rango laboral."
+                1 => "Monday",
+                2 => "Tuesday",
+                3 => "Wednesday",
+                4 => "Thursday",
+                5 => "Friday",
+                _ => "Number out of the working range."
             };
-            Console.WriteLine($"Resultado: {result}");
+            Console.WriteLine($"Result: {result}");
+        }
+        else
+        {
+            Console.WriteLine("Result: Number out of the working range.");
         }
     }
 }
